@@ -78,12 +78,13 @@ div img {
 }
 
 h2 {
-    text-decoration: underline;
     font-size: 28px;
     background-color: rgb(214, 214, 243);
-    padding: 5px 20px;
-    margin: 10px 30px 10px 0;
+    padding: 5px 40px 5px 70px;
+    margin: 10px 30px 0px 0;
     border-radius: 0px 60px 60px 0px;
+    float: none;
+    display: inline-block;
 }
 
 .main-content {
@@ -110,4 +111,14 @@ h2 {
     line-height: 1.5;
     margin-left: 20px;
     padding-top: 20px;
+}
+
+.date {
+    text-align: right;
+    color: rgb(129, 126, 126);
+    margin-left: 30px;
+}
+
+.group p {
+    margin-top: 5px;
 }
