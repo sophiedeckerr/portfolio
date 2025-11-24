@@ -25,33 +25,49 @@ body {
     padding-left: 0px;
     border-radius: 60px 0px 0px 60px;
     height: 200px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 200px auto 450px;
+    grid-template-rows: 10% auto;
+    grid-template-areas:
+        "img nav contact"
+        "img title contact";
     z-index: 2;
     grid-area: header;
 }
 
+.nav {
+    grid-area: nav;
+    display: inline-flex;
+    flex-direction: row;
+    min-width: max-content;
+    justify-content: space-evenly;
+    margin: 5px auto;
+}
 
+.nav p {
+    margin: auto;
+    justify-self: space-evenly;
+}
 
 h1 {
-    margin-top: 15px;
     font-size: 3em;
-    position: absolute;
-    left: 350px;
-    top: 50px;
+    position: relative;
+    left: 40px;
+}
+
+.title {
     width: max-content;
+    position: relative;
+    top: 20px;
+    grid-area: title;
+    margin: 0 auto;
+
 }
 
 .header h3 {
     font-size: 2em;
     font-weight: 400;
     color: #555;
-    position: absolute;
-    left: 315px;
-    top: 100px;
-    width: max-content;
 }
 
 
@@ -59,24 +75,20 @@ div img {
     width: 20px;
     height: 20px;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 8px;
 }
 
 #selfie {
-    grid-area: img;
     border-radius: 50%;
     width: 200px;
     height: 200px;
-    display: block;
-    margin-right: auto;
+    grid-area: img;
 }
 
 .contact {
-    margin: 0 130px 0 auto;
     font-size: 1em;
-    position: absolute;
-    left: 925px;
-    width: max-content;
+    margin: 5px 170px 5px auto;
+    grid-area: contact;
 }
 
 .main-content {
@@ -88,7 +100,7 @@ div img {
 
 .sidebar {
     background-color: rgba(213, 206, 215, 0.923);
-    height: 1100px;
+    height: 100%;
     margin: 0;
     margin-right: 100px;
     z-index: 1;
@@ -119,13 +131,15 @@ div img {
 
 .date {
     color: rgb(109, 108, 108);
-    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: 0px;
-    font-weight: 450;
+    font-size: smaller;
+    text-align: right;
+    display: block;
 }
 
 .main-content li::marker {
-    color: rgb(214, 214, 243);
+    color: rgb(190, 190, 243);
 }
 
 h1,
@@ -142,13 +156,17 @@ h2 {
     border-radius: 0 60px 60px 0;
     display: inline-block;
     position: relative;
-
-
 }
 
 h3 {
     letter-spacing: 1.1px;
     font-size: 1.3em;
+}
+
+h3 div {
+    font-weight: lighter;
+    display: inline-block;
+    font-size: smaller;
 }
 
 .education h2 {
@@ -164,9 +182,12 @@ h3 {
     line-height: 0;
 }
 
+.main-content .group {
+    padding-left: 100px;
+}
+
 .location {
-    margin-top: 0px;
-    margin-left: 10px;
+    margin: 0px 10px 5px 10px;
     letter-spacing: 1.1px;
     font-weight: 550;
     font-size: small;
@@ -175,23 +196,4 @@ h3 {
 
 ul {
     line-height: 30px;
-}
-
-.work-experience .date {
-    position: relative;
-    top: -40px;
-    left: 25px;
-    float: inline-end;
-}
-
-.highschool .date {
-    position: relative;
-    top: -35px;
-    left: 250px;
-}
-
-.college .date {
-    position: relative;
-    top: -35px;
-    left: 500px;
 }
