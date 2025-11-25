@@ -7,6 +7,9 @@ body {
 
 body {
     font-family: "Newsreader", sans-serif;
+}
+
+#resume {
     display: grid;
     grid-template-columns: auto 450px;
     grid-template-rows: 20% auto;
@@ -16,7 +19,17 @@ body {
     column-gap: 10px;
     row-gap: 10px;
     ;
+}
 
+#cover {
+    display: grid;
+    grid-template-rows: 20% auto;
+    grid-template-columns: auto 450px;
+    grid-template-areas:
+        "header header"
+        "body body";
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .header {
@@ -35,6 +48,7 @@ body {
     grid-area: header;
 }
 
+
 .nav {
     grid-area: nav;
     display: inline-flex;
@@ -44,10 +58,27 @@ body {
     margin: 5px auto;
 }
 
-.nav p {
-    margin: auto;
+
+
+.nav a {
+    margin: 15px 20px;
     justify-self: space-evenly;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #555;
 }
+
+.nav a:active,
+a:hover {
+    color: #7600ad !important;
+}
+
+.contact a:visited,
+.contact a:link {
+    color: black;
+}
+
 
 h1 {
     font-size: 3em;
@@ -87,8 +118,10 @@ div img {
 
 .contact {
     font-size: 1em;
-    margin: 5px 170px 5px auto;
     grid-area: contact;
+    margin: 5px 170px 5px auto;
+    padding-left: 15px;
+    width: max-content;
 }
 
 .main-content {
@@ -136,6 +169,7 @@ div img {
     font-size: smaller;
     text-align: right;
     display: block;
+    line-height: 0;
 }
 
 .main-content li::marker {
@@ -161,6 +195,7 @@ h2 {
 h3 {
     letter-spacing: 1.1px;
     font-size: 1.3em;
+    line-height: 0;
 }
 
 h3 div {
@@ -179,10 +214,9 @@ h3 div {
 
 .group {
     margin: 40px 20px;
-    line-height: 0;
 }
 
-.main-content .group {
+.indent {
     padding-left: 100px;
 }
 
@@ -191,9 +225,30 @@ h3 div {
     letter-spacing: 1.1px;
     font-weight: 550;
     font-size: small;
+    line-height: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 ul {
     line-height: 30px;
+}
+
+.paragraphs {
+    grid-area: body;
+    white-space: normal;
+    width: 850px;
+    display: block;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.intro {
+    text-indent: 20px;
+}
+
+#cover .main-content {
+    grid-area: body;
+    margin-top: 60px;
+    width: max-xontent;
+    margin: 40px auto;
 }
