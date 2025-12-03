@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+    <title>Career Goals</title>
+</head>
+
+<body id="career">
+    <header>
+        <img id="selfie" src="/Users/sophiedecker/Downloads/IMG_6528.png" alt="selfie of sophia decker"> <!--pretend this is a formal picture of me and not of my cat-->
+        <section id="title">
+            <section id="nav">
+                <a href="resume.html">Resume</a>
+                <a href="coverletter.html">Cover Letter</a>
+                <a href="careergoals.html">Career Goals</a>
+            </section>
+            <h1>Sophia Decker</h1>
+            <h3>Software Engineering Student</h3>
+        </section>
+        <section id="contact" class="group">
+            <ul>
+                <li>Minneapolis, MN</li>
+                <li>(612) 703-1033</li>
+                <li>Sophie.Decker26@gmail.com</li>
+                <li><img src="/Users/sophiedecker/Downloads/linkedin logo.png" alt="linkedin logo image"><a href="linkedin.com/in/sophia-decker-021539174">linkedin.com/Sophia-Decker</a></li>
+                <li><img src="/Users/sophiedecker/Downloads/github logo image.png" alt="github logo image"><a href="https://github.com/sophiedeckerr">github.com/sophiedeckerr</a></li>
+            </ul>
+        </section>
+    </header>
+    <article>
+        <section id="aboutme" class="group">
+            <h2> About Me</h2>
+            <p class="indent"> Hello! My name is Sophia Decker and I am a current student of Western Governors University studying to obtain my Bachelor of Science in Software Engineering. I am currently working as a bartender while I make my way through school which has given me the chance to meet many different individiuals that will help in achieving my dream of being a successful software engineer! Below, I have outline some of my current career goals for both the short and long term.</p>
+        </section>
+        <section class="group">
+            <h2>Career Goals</h2>
+            <section class="group indent">
+                <h3>Short-term</h3>
+                <ul>
+                    <li>Complete my Bachelor of Science in Software Engineering at Western Governors University by June 2027.</li>
+                    <li>Secure a summer internship in software development to gain practical experience and enhance my coding skills.</li>
+                    <li>Build a portfolio of personal projects on GitHub to showcase my abilities to potential employers.</li>
+                    <li>Attend industry conferences and networking events to connect with professionals in the field.</li>
+                </ul>
+            </section>
+            <section class="group indent">
+                <h3>Long-term</h3>
+                <ul>
+                    <li>Obtain a full-time position as a Software Engineer at a leading tech company</li>
+                    <li>Keep up-tp-date with new technologies and techniques to stay relevant in the field.</li>
+                    <li>Secure a position in a leadership position</li>
+                </ul>
+            </section>
+        </section>
+    </article>
+    <section id="sidebar"> <!--SIDEBAR-->
+        <p>video</p>
+        <p>audio</p>
+        <form method="get" action="https://www.example.com/submit">
+            <p>
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+                <br>
+            </p>
+            <p>
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname">
+                <br>
+            </p>
+            <p>
+                <label for="company">Company:</label>
+                <input type="text" id="company" name="company">
+                <br>
+            </p>
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <br>
+            </p>
+            <p>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone">
+                <br>
+            </p>
+            <section class="group">
+                <p>Preferred Contact Method:</p>
+                <div>
+                    <label for="contact-email">Email</label>
+                    <input type="radio" id="contact-email" name="contact-method" value="email">
+                </div>
+                <div>
+                    <label for="contact-phone">Phone</label>
+                    <input type="radio" id="contact-phone" name="contact-method" value="phone">
+                </div>
+                <div>
+                    <label for="contact-text">Text</label>
+                    <input type="radio" id="contact-text" name="contact-method" value="text">
+                </div>
+            </section>
+            <section class="group">
+                <p>Best Time to Contact:</p>
+                <div>
+                    <label for="time-am">Morning</label>
+                    <input type="checkbox" id="time-am" name="contact-time" value="morning">
+                </div>
+                <div>
+                    <label for="time-afternoon">Afternoon</label>
+                    <input type="checkbox" id="time-afternoon" name="contact-time" value="afternoon">
+                </div>
+                <div>
+                    <label for="time-evening">Evening</label>
+                    <input type="checkbox" id="time-evening" name="contact-time" value="evening">
+                </div>
+            </section>
+            <div class="group">
+                <label for="comments">Additional Comments:</label>
+                <br>
+                <textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+            </div>
+        </form>
+    </section>
+    <hr>
+    <footer> <!--FOOTER-->
+        <p>Career Goals</p>
+        <p id="currentdate"></p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const d = new Date();
+                let month = d.getMonth() + 1;
+                let day = d.getDate();
+                let year = d.getFullYear();
+
+                if (month < 10) month = '0' + month;
+                if (day < 10) day = '0' + day;
+
+                document.getElementById("currentdate").textContent = month + '/' + day + '/' + year;
+            });
+        </script>
+    </footer>
+</body>

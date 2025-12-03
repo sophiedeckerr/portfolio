@@ -1,179 +1,82 @@
-html,
 body {
-    margin: 0;
+    margin: auto;
     padding: 0;
-    height: 100%;
-}
-
-body {
     font-family: "Newsreader", sans-serif;
+    display: grid;
+    grid-template-rows: 300px auto;
+    grid-template-columns: 200px 800px 400px;
+    max-width: 1400px;
+    height: fit-content;
+    border: 1px solid rgba(213, 206, 215, 0.923);
+    align-items: center;
 }
 
-#resume {
-    display: grid;
-    grid-template-columns: auto 450px;
-    grid-template-rows: 20% auto;
-    grid-template-areas:
-        "header header"
-        "body sidebar";
-    column-gap: 10px;
-    row-gap: 10px;
-    ;
-}
+/* header */
 
-#cover {
-    display: grid;
-    grid-template-rows: 20% auto;
-    grid-template-columns: auto 450px;
-    grid-template-areas:
-        "header header"
-        "body body";
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-.header {
-    background: rgb(214, 214, 243);
-    margin: 10px 0px 0px 30px;
-    padding-left: 0px;
-    border-radius: 60px 0px 0px 60px;
-    height: 200px;
-    display: grid;
-    grid-template-columns: 200px auto 450px;
-    grid-template-rows: 10% auto;
-    grid-template-areas:
-        "img nav contact"
-        "img title contact";
+header {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    background-color: rgb(214, 214, 243);
+    width: 100%;
+    height: 250px;
     z-index: 2;
-    grid-area: header;
+    margin-top: 20px;
+    display: flex;
+    border-radius: 150px 0 0 150px;
+    margin-left: 5px;
+    margin: 20px 5px 5px 2px;
 }
 
+#selfie {
+    /* selfie image */
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    align-self: center;
+}
 
-.nav {
-    grid-area: nav;
-    display: inline-flex;
-    flex-direction: row;
+/* navigation bar */
+
+#nav {
+    /* nav links */
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    display: flex;
+    justify-content: center;
     min-width: max-content;
-    justify-content: space-evenly;
-    margin: 5px auto;
 }
 
-
-
-.nav a {
+#nav a {
     margin: 15px 20px;
-    justify-self: space-evenly;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
     color: #555;
 }
 
-.nav a:active,
+#nav a:active,
 a:hover {
     color: #7600ad !important;
 }
 
-.contact a:visited,
-.contact a:link {
-    color: black;
-}
+/* nav, name, title */
 
+#title {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    min-width: max-content;
+    position: relative;
+    top: -20px;
+    left: 30px;
+}
 
 h1 {
     font-size: 3em;
-    position: relative;
-    left: 40px;
-}
-
-.title {
-    width: max-content;
-    position: relative;
-    top: 20px;
-    grid-area: title;
-    margin: 0 auto;
-
-}
-
-.header h3 {
-    font-size: 2em;
-    font-weight: 400;
-    color: #555;
-}
-
-
-div img {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-#selfie {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    grid-area: img;
-}
-
-.contact {
-    font-size: 1em;
-    grid-area: contact;
-    margin: 5px 170px 5px auto;
-    padding-left: 15px;
-    width: max-content;
-}
-
-.main-content {
-    grid-area: body;
-    margin-top: 60px;
-    width: max-content;
-    margin-left: 0;
-}
-
-.sidebar {
-    background-color: rgba(213, 206, 215, 0.923);
-    height: 100%;
-    margin: 0;
-    margin-right: 100px;
-    z-index: 1;
-    position: relative;
-    grid-area: sidebar;
-    width: max-content;
-}
-
-.sidebar h3,
-.sidebar ul {
-    position: relative;
-    top: 100px;
-}
-
-.sidebar h3 {
-    letter-spacing: 1.2px;
-    font-size: larger;
-    margin-top: 20px;
-}
-
-.sidebar ul {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    line-height: 40px;
-    position: relative;
-    left: -10px;
-    letter-spacing: .1px;
-}
-
-.date {
-    color: rgb(109, 108, 108);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    letter-spacing: 0px;
-    font-size: smaller;
-    text-align: right;
-    display: block;
-    line-height: 0;
-}
-
-.main-content li::marker {
-    color: rgb(190, 190, 243);
 }
 
 h1,
@@ -182,14 +85,89 @@ h2 {
     letter-spacing: 3px;
 }
 
+#title h3 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #555;
+}
+
+#title div {
+    margin-top: 20px;
+}
+
+/* contact info */
+
+#contact {
+    padding: 0;
+    flex: right;
+    margin-right: 10%;
+    line-height: 1.5em;
+    font-size: 1em;
+    min-width: max-content;
+    position: relative;
+    top: -10px;
+}
+
+#contact li {
+    list-style-type: none;
+}
+
+#contact a:visited,
+#contact a:link {
+    color: black;
+}
+
+#contact img {
+    /* icons for linkedin and github */
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+    position: relative;
+    top: 8px;
+}
+
+/* sidebar */
+
+#sidebar {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 3;
+    background-color: rgba(213, 206, 215, 0.923);
+    height: 100vh;
+    z-index: 1;
+    margin-right: 5%;
+    width: 300px;
+    padding: 350px 20px;
+}
+
+#sidebar h3 {
+    letter-spacing: 1.2px;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+#sidebar ul {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 40px;
+    letter-spacing: .1px;
+    font-size: smaller;
+}
+
+/* body-all */
+article {
+    width: 1350px;
+}
+
 h2 {
     font-size: 28px;
     background-color: rgb(214, 214, 243);
     padding: 5px 80px 5px 100px;
-    margin: 30px 30px 20px 0;
-    border-radius: 0 60px 60px 0;
+    margin: 10px 30px 20px 0;
+    border-radius: 0px 60px 60px 0px;
     display: inline-block;
-    position: relative;
+}
+
+.group {
+    margin: 40px auto;
 }
 
 h3 {
@@ -204,20 +182,28 @@ h3 div {
     font-size: smaller;
 }
 
-.education h2 {
-    margin-top: 40px;
-}
-
-.work-experience h2 {
-    margin-top: 30px
-}
-
-.group {
-    margin: 40px 20px;
+ul {
+    line-height: 30px;
 }
 
 .indent {
-    padding-left: 100px;
+    margin-left: 50px;
+}
+
+
+/* resume-specific */
+
+#resume article {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    width: max-content;
+    margin-left: 0;
+    position: relative;
+    top: -40px;
+}
+
+#work-experience h2 {
+    margin-top: 30px
 }
 
 .location {
@@ -229,26 +215,47 @@ h3 div {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-ul {
-    line-height: 30px;
-}
-
-.paragraphs {
-    grid-area: body;
-    white-space: normal;
-    width: 850px;
+.date {
+    color: rgb(109, 108, 108);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0px;
+    font-size: smaller;
+    text-align: right;
     display: block;
-    line-height: 1.6;
-    text-align: left;
+    line-height: 0;
 }
 
-.intro {
-    text-indent: 20px;
+article li::marker {
+    color: rgb(190, 190, 243);
 }
 
-#cover .main-content {
-    grid-area: body;
-    margin-top: 60px;
-    width: max-xontent;
-    margin: 40px auto;
+/* cover letter-specific */
+
+#cover article {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 1;
+    width: 800px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#paragraphs {
+    line-height: 2;
+}
+
+/* career goals-specific */
+
+#career article {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+    margin-left: 0;
+    position: relative;
+    top: -50px;
+    width: 90%;
+}
+
+#aboutme p {
+    line-height: 2;
 }

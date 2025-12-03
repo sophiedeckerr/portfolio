@@ -12,42 +12,44 @@
 </head>
 
 <body id="resume">
-    <section class="header">
-        <img id="selfie" src="/Users/sophiedecker/Downloads/linkedin logo.png" alt="selfie of sophia decker">
-        <div class="title">
-            <h1>Sophia Decker</h1>
+    <header>
+        <img id="selfie" src="/Users/sophiedecker/Downloads/IMG_6528.png" alt="selfie of sophia decker"> <!--pretend this is a formal picture of me and not of my cat-->
+        <section id="title">
+            <section id="nav"> <!-- NAVIGATION -->
+                <a href="resume.html">Resume</a>
+                <a href="coverletter.html">Cover Letter</a>
+                <a href="careergoals.html">Career Goals</a>
+            </section>
+            <h1>Sophia Decker</h1> <!-- NAME AND TITLE -->
             <h3>Software Engineering Student</h3>
-        </div>
-        <div class="nav">
-            <a href="resume.html">Resume</a>
-            <a href="coverletter.html">Cover Letter</a>
-            <a href="careergoals.html">Career Goals</a>
-        </div>
-        <div class="contact">
-            <p>Minneapolis, MN</p>
-            <p>(612) 703-1033</p>
-            <p>Sophie.Decker26@gmail.com</p>
-            <p><img src="/Users/sophiedecker/Downloads/linkedin logo.png" alt="linkedin logo image"><a href="linkedin.com/in/sophia-decker-021539174">linkedin.com/Sophia-Decker</a></p>
-            <p><img src="/Users/sophiedecker/Downloads/github logo image.png" alt="github logo image"><a href="https://github.com/sophiedeckerr">github.com/sophiedeckerr</a></p>
-        </div>
-    </section>
-    <section class="main-content">
-        <div class="education">
+        </section>
+        <section id="contact" class="group"> <!-- CONTACT INFO -->
+            <ul>
+                <li>Minneapolis, MN</li>
+                <li>(612) 703-1033</li>
+                <li>Sophie.Decker26@gmail.com</li>
+                <li><img src="/Users/sophiedecker/Downloads/linkedin logo.png" alt="linkedin logo image"><a href="linkedin.com/in/sophia-decker-021539174">linkedin.com/Sophia-Decker</a></li>
+                <li><img src="/Users/sophiedecker/Downloads/github-logo-no-background-11659780053kfswou6xts.png" alt="github logo"> <a href="https://github.com/sophiedeckerr">Github.com/SophiaDecker</a>
+            </ul>
+        </section>
+    </header>
+    <article>
+        <section id="education"> <!-- EDUCATION -->
             <h2>Education</h2>
-            <div class="group indent">
+            <section id="highschool" class="group indent">
                 <h3>Highschool Diploma <div>(June 2020)</div>
                 </h3>
                 <p><em class="location">Eastview Highschool</em></p>
-            </div>
-            <div class="group indent">
+            </section>
+            <section id="college" class="group indent">
                 <h3>Bachelor of Science in Software Engineering <div>(Expected June 2027)</div>
                 </h3>
                 <p><em class="location">Western Govenors University, Salt Lake City, Utah</em></p>
-            </div>
-        </div>
-        <div class="work-experience">
+            </section>
+        </section>
+        <section id="work-experience"> <!-- WORK EXPERIENCE -->
             <h2>Work Experience</h2>
-            <div class="group indent">
+            <section id="holmans" class="group indent">
                 <h3>Bartender</h3>
                 <p><em class="location">Holmans Table, St Paul, MN</em><b class="date">May 2025 to present</b></p>
                 <ul>
@@ -62,8 +64,8 @@
                     <li>Ensured that all guests felt welcome and received responsive, professional, and kind service at
                         all times.</li>
                 </ul>
-            </div>
-            <div class="group indent">
+            </section>
+            <section id="devils" class="group indent">
                 <h3>Bar Manager/ Bartender</h3>
                 <p><em class="location">Devils Advocate, Minneapolis, MN</em><b class="date">May 2022 to May 2025</b>
                 </p>
@@ -76,11 +78,11 @@
                         team environment.</li>
                     <li>Handled customer complaints and resolved issues promptly to maintain a positive atmosphere.</li>
                 </ul>
-            </div>
-        </div>
-    </section>
-    <section class="sidebar">
-        <div class="group skills">
+            </section>
+        </section>
+    </article>
+    <section id="sidebar"> <!-- SIDEBAR -->
+        <section id="skills" class="group">
             <h3>Skills</h3>
             <ul>
                 <li>HTML</li>
@@ -90,16 +92,34 @@
                 <li>Problem Solving</li>
                 <li>Time Management</li>
             </ul>
-        </div>
-        <div class="group classwork">
+        </section>
+        <section id="classwork" class="group">
             <h3>Relevant Classwork</h3>
             <ul>
                 <li>Scripting and Programming Foundations</li>
                 <li>Version Control</li>
                 <li>Web Development Foundations</li>
             </ul>
-        </div>
+        </section>
     </section>
+    <hr>
+    <footer>
+        <p>Resume</p>
+        <p id="currentdate"></p>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const d = new Date();
+                let month = d.getMonth() + 1;
+                let day = d.getDate();
+                let year = d.getFullYear();
+
+                if (month < 10) month = '0' + month;
+                if (day < 10) day = '0' + day;
+
+                document.getElementById("currentdate").textContent = month + '/' + day + '/' + year;
+            });
+        </script>
+    </footer>
 </body>
 
 
